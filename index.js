@@ -161,7 +161,7 @@ var ModalBox = createReactClass({
     var keyboardFrame = evt.endCoordinates;
     var keyboardHeight = this.state.containerHeight - keyboardFrame.screenY;
 
-    this.state.keyboardOffset = keyboardHeight;
+    this.state.keyboardOffset = Math.max(keyboardHeight, 0);
     this.animateOpen();
   },
 
